@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 export const App = () => {
   return (
     <BrowserRouter>
-      <main className>
+      <main>
         <Navbar />
       </main>
     </BrowserRouter>

@@ -1,66 +1,108 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className="w-full p-4 text-gray-600 text- poppins-medium border-b-4 border-black">
-      <div className="flex flex-row items-center justify-between">
-        <Link
-          to="/"
-          className="flex flex-row gap-3 items-baseline poppins-regular"
+    <header className="w-full p-4 text-gray-600 poppins-medium border-b-4 border-black">
+      <div className=" w-full flex flex-row max-lg:flex-col items-center justify-between">
+        <div
+          className={`flex flex-row justify-between items-center max-lg:w-full ${
+            isOpen && "max-lg:border-b-2 max-lg:border-b-gray-600"
+          } `}
         >
-          <svg
-            className="w-24 inline"
-            viewBox="0 0 342 35"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
-              fill="currentColor"
-            ></path>
-          </svg>
-          <span>|</span>
-          <span className="">Careers</span>
-        </Link>
-        <nav className="flex flex-row gap-4">
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            to="/"
+            className="flex flex-row gap-3 items-baseline poppins-regular"
+          >
+            <svg
+              className="w-24 inline"
+              viewBox="0 0 342 35"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span>|</span>
+            <span className="">Careers</span>
+          </Link>
+          <div className="lg:hidden">
+            <button
+              onClick={handleToggle}
+              className="text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <nav
+          className={`${
+            isOpen ? "block" : "hidden"
+          } flex lg:flex flex-col  lg:flex-row gap-4 items-center max-lg:gap-2 max-lg:py-2`}
+        >
+          <Link
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 "
             to="/explore"
           >
             Explore Jobs
           </Link>
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
             to="/manufacturing"
           >
             Manufacturing
           </Link>
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
             to="/ai"
           >
             AI
           </Link>
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/interships"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            to="/internships"
           >
             Internships
           </Link>
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
             to="/veterans"
           >
             Veterans
           </Link>
           <Link
-            className=" hover:rounded-md hover:bg-gray-200 px-2 py-1"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
             to="/aboutus"
           >
             About Us
           </Link>
         </nav>
-        <div className="flex flex-row gap-4 justify-center items-center">
+        <div
+          className={`flex flex-row gap-4 justify-center items-center lg:flex max-lg:flex-row ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
           <button className="hover:rounded-md hover:bg-gray-200 px-2 py-1">
             Profile
           </button>
