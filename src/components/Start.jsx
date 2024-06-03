@@ -2,14 +2,12 @@ import React from "react";
 
 export const Start = () => {
   return (
-    <div className="w-full h-30 py-6 grid place-items-center bg-customGreen text-[#ffe989]">
-      <h3 className="text-4xl pb-6">Let's Start</h3>
-      <p>Lorem ipsum dolor sit amet consectetur.</p>
-      <div>
-        <button className="bg-customPurple px-4 py-2 rounded-sm font-bold text-base text-customWhite mt-4">
-          Sign Up for Free
-        </button>
-      </div>
+    <div className="w-full py-12 grid place-items-center bg-customGreen text-[#ffe989]">
+      <h3 className="text-4xl pb-4">Let's Start</h3>
+      <p className="text-lg mb-4">Lorem ipsum dolor sit amet consectetur.</p>
+      <button className="bg-customPurple px-6 py-3 rounded font-bold text-base text-customWhite transition-transform duration-300 hover:scale-105 mt-4">
+        Sign Up for Free
+      </button>
     </div>
   );
 };

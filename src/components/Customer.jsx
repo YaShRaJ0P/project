@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { PiCaretLeftBold } from "react-icons/pi";
-import { PiCaretRightBold } from "react-icons/pi";
+import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
 export const Customer = () => {
   const reviews = [
@@ -35,11 +34,11 @@ export const Customer = () => {
 
   return (
     <div className="text-customWhite flex flex-col justify-center items-center w-full bg-customGray">
-      <h3 className="text-3xl font-bold py-2 w-full grid place-items-center">
+      <h3 className="text-3xl font-bold py-4 w-full flex items-center justify-center">
         What our Customers Think?
       </h3>
       <div className="bg-customWhite text-customBlack w-full p-8">
-        <div className="max-w-2xl relative mx-auto bg-customWhite rounded-lg shadow-lg border-2 border-customGreen">
+        <div className="max-w-2xl relative mx-auto bg-customWhite rounded-lg shadow-lg border-2 border-customGreen transition-all duration-300 ease-in-out">
           <div className="flex items-center p-4">
             <img
               src={`${reviews[currentCustomerReviewIndex].image}`}
@@ -52,7 +51,7 @@ export const Customer = () => {
               </h2>
             </div>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-b-md">
+          <div className="px-4 py-2 rounded-b-md">
             <p className="text-gray-700">
               {reviews[currentCustomerReviewIndex].review}
             </p>
@@ -61,7 +60,7 @@ export const Customer = () => {
             onClick={() => {
               setCurrentCustomerReviewIndex(currentCustomerReviewIndex - 1);
             }}
-            className="absolute top-1/2 -left-[3%] rounded-full p-2 size-8 text-xl bg-customGreen flex items-center justify-center text-customWhite disabled:opacity-0"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 rounded-full p-2 size-8 text-xl bg-customGreen flex items-center justify-center text-customWhite transition-opacity duration-300 ease-in-out disabled:hidden"
             disabled={currentCustomerReviewIndex === 0}
           >
             <PiCaretLeftBold />
@@ -70,11 +69,23 @@ export const Customer = () => {
             onClick={() => {
               setCurrentCustomerReviewIndex(currentCustomerReviewIndex + 1);
             }}
-            className="absolute top-1/2 -right-[3%] rounded-full p-2 size-8 text-xl bg-customGreen flex items-center justify-center text-customWhite disabled:opacity-0"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 rounded-full p-2 size-8 text-xl bg-customGreen flex items-center justify-center text-customWhite transition-opacity duration-300 ease-in-out disabled:hidden"
             disabled={currentCustomerReviewIndex === reviews.length - 1}
           >
             <PiCaretRightBold />
           </button>
+          <div className="flex justify-center mt-4 pb-2">
+            {reviews.map((review) => (
+              <span
+                key={review.id}
+                className={`h-2 w-2 rounded-full mx-1 ${
+                  review.id === currentCustomerReviewIndex
+                    ? "bg-customGreen"
+                    : "bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

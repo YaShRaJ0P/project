@@ -9,12 +9,12 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="w-full p-4 text-gray-600 poppins-medium border-b-4 border-black">
-      <div className=" w-full flex flex-row max-lg:flex-col items-center justify-between">
+    <header className="fixed w-full p-4 text-gray-600 bg-white shadow-md poppins-medium border-b-4 border-black z-50">
+      <div className="flex flex-row max-lg:flex-col items-center justify-between">
         <div
           className={`flex flex-row justify-between items-center max-lg:w-full ${
-            isOpen && "max-lg:border-b-2 max-lg:border-b-gray-600"
-          } `}
+            isOpen && "max-lg:border-b-2 max-lg:border-gray-300"
+          }`}
         >
           <Link
             to="/"
@@ -31,12 +31,13 @@ export const Navbar = () => {
               ></path>
             </svg>
             <span>|</span>
-            <span className="">Careers</span>
+            <span className="text-lg">Careers</span>
           </Link>
           <div className="lg:hidden">
             <button
               onClick={handleToggle}
               className="text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800"
+              aria-label="Toggle Menu"
             >
               <svg
                 className="w-6 h-6"
@@ -59,22 +60,22 @@ export const Navbar = () => {
         <nav
           className={`${
             isOpen ? "block" : "hidden"
-          } flex lg:flex flex-col  lg:flex-row gap-4 items-center max-lg:gap-2 max-lg:py-2 max-lg:w-full`}
+          } flex lg:flex flex-col lg:flex-row gap-4 items-center max-lg:gap-2 max-lg:py-2 max-lg:w-full transition-all duration-300 ease-in-out`}
         >
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-gray-300"
             to="/"
           >
             Home
           </Link>
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-gray-300"
             to="/pricing"
           >
             Pricing
           </Link>
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-gray-300"
             to="/usecases"
           >
             Use Cases
@@ -83,7 +84,7 @@ export const Navbar = () => {
         <div
           className={`flex flex-row gap-4 justify-center items-center lg:flex max-lg:flex-row ${
             isOpen ? "block" : "hidden"
-          }`}
+          } transition-all duration-300 ease-in-out`}
         >
           <button className="hover:rounded-md hover:bg-gray-200 px-2 py-1">
             Profile

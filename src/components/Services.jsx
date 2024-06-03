@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { PiArrowRightBold } from "react-icons/pi";
 
 export const Services = () => {
   const imageContainer = [
@@ -33,36 +34,40 @@ export const Services = () => {
       name: "mno",
     },
   ];
-  const [imageIndex, setimageIndex] = useState(0);
+
+  const [imageIndex, setImageIndex] = useState(0);
+
   return (
     <div className="bg-customGray w-full text-white flex flex-col justify-center items-center">
-      <h3 className="text-3xl font-bold py-2 w-full grid place-items-center">
+      <h3 className="text-4xl font-bold py-4 w-full text-center">
         What we Offer?
       </h3>
-      <div className="flex flex-row w-full bg-customWhite text-customGreen p-8">
-        <ul className="w-2/5 h-96 flex flex-col justify-center items-start px-6 text-5xl">
-          {imageContainer.map((image) => {
-            return (
-              <li
-                key={image.id}
-                className={`group ${
-                  imageIndex === image.id && "underline"
-                } cursor-pointer`}
-                onClick={() => {
-                  setimageIndex(image.id);
-                }}
+      <div className="flex flex-col lg:flex-row w-full bg-customWhite text-customGreen p-8">
+        <ul className="w-full lg:w-2/5 flex flex-col justify-center items-start text-2xl lg:text-4xl font-bold px-6 mb-8 lg:mb-0">
+          {imageContainer.map((image) => (
+            <li
+              key={image.id}
+              className={`group cursor-pointer flex items-end justify-center py-4 ${
+                imageIndex === image.id ? "underline text-customGreen" : ""
+              }`}
+              onClick={() => setImageIndex(image.id)}
+            >
+              {image.name}
+              <span
+                className={`underline font-mono text-2xl lg:text-3xl ml-2 transform ${
+                  imageIndex === image.id ? "-rotate-45" : ""
+                } transition-transform duration-300 inline-block`}
               >
-                {image.name}
-                <div className="font-mono group-hover:rotate-90 inline">→</div>
-              </li>
-            );
-          })}
+                <PiArrowRightBold />
+              </span>
+            </li>
+          ))}
         </ul>
-        <div className="w-3/5">
+        <div className="w-full lg:w-3/5 flex justify-center items-center">
           <img
-            className="w-full aspect-square h-96"
-            src={`${imageContainer[imageIndex].image}`}
-            alt="Abc"
+            className="w-full h-64 lg:h-96 object-cover rounded-lg shadow-lg"
+            src={imageContainer[imageIndex].image}
+            alt={imageContainer[imageIndex].name}
           />
         </div>
       </div>
