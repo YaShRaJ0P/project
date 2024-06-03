@@ -1,12 +1,12 @@
 import React from "react";
-import { Navbar } from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Main } from "./components/Main";
 export const App = () => {
   return (
     <BrowserRouter>
-      <main>
-        <Navbar />
-      </main>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+      </Routes>
     </BrowserRouter>
   );
 };

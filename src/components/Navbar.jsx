@@ -59,43 +59,25 @@ export const Navbar = () => {
         <nav
           className={`${
             isOpen ? "block" : "hidden"
-          } flex lg:flex flex-col  lg:flex-row gap-4 items-center max-lg:gap-2 max-lg:py-2`}
+          } flex lg:flex flex-col  lg:flex-row gap-4 items-center max-lg:gap-2 max-lg:py-2 max-lg:w-full`}
         >
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 "
-            to="/explore"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            to="/"
           >
-            Explore Jobs
+            Home
           </Link>
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/manufacturing"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            to="/pricing"
           >
-            Manufacturing
+            Pricing
           </Link>
           <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/ai"
+            className="hover:rounded-md hover:bg-gray-200 px-2 py-1 max-lg:border-b-2 max-lg:border-b-gray-600"
+            to="/usecases"
           >
-            AI
-          </Link>
-          <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/internships"
-          >
-            Internships
-          </Link>
-          <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/veterans"
-          >
-            Veterans
-          </Link>
-          <Link
-            className="hover:rounded-md hover:bg-gray-200 px-2 py-1"
-            to="/aboutus"
-          >
-            About Us
+            Use Cases
           </Link>
         </nav>
         <div
