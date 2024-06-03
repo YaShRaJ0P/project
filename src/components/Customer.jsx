@@ -9,7 +9,7 @@ export const Customer = () => {
       image:
         "https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_640.jpg",
       review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, unde! Lorem ipsum dolor sit amet, consectsdasdasdasdetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
     },
     {
       id: 1,
@@ -17,7 +17,7 @@ export const Customer = () => {
       image:
         "https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_640.jpg",
       review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
+        "asfgfs gfsf syufds gfsiyfsifaykasofsh fisgLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const Customer = () => {
       image:
         "https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_640.jpg",
       review:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, labore? jhfhaf fuydLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, libero eudignissim aliquam, nunc nunc luctus nunc, eu ultricies",
     },
   ];
 
@@ -38,7 +38,7 @@ export const Customer = () => {
         What our Customers Think?
       </h3>
       <div className="bg-customWhite text-customBlack w-full p-8">
-        <div className="max-w-2xl relative mx-auto bg-customWhite rounded-lg shadow-lg border-2 border-customGreen transition-all duration-300 ease-in-out">
+        <div className="max-w-2xl relative mx-auto bg-customWhite rounded-lg shadow-lg border-2 border-customGreen">
           <div className="flex items-center p-4">
             <img
               src={`${reviews[currentCustomerReviewIndex].image}`}
