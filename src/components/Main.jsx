@@ -4,6 +4,7 @@ import { Services } from "./Services";
 import { Customer } from "./Customer";
 import { Start } from "./Start";
 import React from "react";
+import { Footer } from "./Footer";
 
 export const Main = () => {
   return (
@@ -13,6 +14,7 @@ export const Main = () => {
       <Services />
       <Customer />
       <Start />
+      <Footer />
     </div>
   );
 };
